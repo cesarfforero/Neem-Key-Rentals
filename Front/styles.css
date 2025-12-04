@@ -1,0 +1,291 @@
+/* =========================================================
+   Base Styles / Variables
+   Mobile First
+   ========================================================= */
+
+:root {
+  --color-bg: #f8f3e9; /* marfil claro */
+  --color-brown: #6a4b2f; /* marrón */
+  --color-gold: #b49362; /* dorado suave */
+  --color-navy: #142536; /* azul oscuro botón Reserve */
+  --color-white: #ffffff;
+  --color-border: #e0d4c3;
+
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  --header-height-mobile: 64px;
+}
+
+/* Reset mínimo y tipografía base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-brown);
+}
+
+/* =========================================================
+   Header - Mobile First
+   ========================================================= */
+
+.main-header {
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 1000;
+}
+
+/* Contenedor principal del header */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  min-height: var(--header-height-mobile);
+}
+
+/* Botones de ícono (hamburguesa y teléfono) */
+.icon-button {
+  background: transparent;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hamburguesa */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.menu-icon span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background-color: var(--color-brown);
+}
+
+/* Logo */
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-brown);
+}
+
+.logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid var(--color-gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.logo-text {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Teléfono SVG */
+.phone-svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--color-brown);
+}
+
+/* =========================================================
+   Nav (Mobile) - dropdown
+   ========================================================= */
+
+/* Mobile: nav se comporta como panel desplegable */
+.main-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.08);
+  display: none; /* Se activa con la clase .nav-open en body */
+}
+
+/* Mostrar el menú cuando el body tiene la clase nav-open */
+body.nav-open .main-nav {
+  display: block;
+}
+
+/* Lista de navegación en columna para móvil */
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 1.25rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Links del menú */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: var(--color-brown);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Flechita hacia abajo */
+.nav-arrow {
+  width: 8px;
+  height: 8px;
+  border-left: 1px solid var(--color-brown);
+  border-bottom: 1px solid var(--color-brown);
+  transform: rotate(-45deg) translateY(-3px);
+  margin-top: 1px;
+}
+
+/* Contenedor de los botones dentro del dropdown */
+.header-actions {
+  padding: 0.75rem 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-outline {
+  border: 1px solid var(--color-brown);
+  color: var(--color-brown);
+  background-color: transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  border: 1px solid var(--color-navy);
+}
+
+/* =========================================================
+   Page content (solo demo)
+   ========================================================= */
+
+.page-content {
+  padding: 2rem 1.5rem;
+}
+
+.hero-placeholder {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =========================================================
+   Desktop / Larger Screens
+   ========================================================= */
+
+/* A partir de ~992px se comporta como header desktop */
+@media (min-width: 992px) {
+  .header-inner {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0.75rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  /* Ocultar íconos de móvil */
+  .menu-toggle,
+  .phone-button {
+    display: none;
+  }
+
+  /* Nav se vuelve inline */
+  .main-nav {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    border-bottom: none;
+    flex: 1;
+  }
+
+  /* Logo a la izquierda */
+  .logo {
+    margin-right: 1.5rem;
+  }
+
+  /* Menú centrado: horizontal */
+  .nav-list {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .nav-link {
+    font-size: 0.62rem;
+    opacity: 0.9;
+  }
+
+  .nav-link:hover {
+    opacity: 1;
+  }
+
+  /* Botones a la derecha del todo */
+  .header-actions {
+    padding: 0;
+    margin-left: 2rem;
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .btn {
+    font-size: 0.78rem;
+    padding: 0.5rem 1.6rem;
+  }
+}
