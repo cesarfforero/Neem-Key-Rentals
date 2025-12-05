@@ -221,6 +221,219 @@ body.nav-open .main-nav {
 }
 
 /* =========================================================
+   HERO PRINCIPAL
+   ========================================================= */
+
+.page-main {
+  background-color: var(--color-bg);
+  position: relative;
+}
+
+/* Hero a pantalla casi completa */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Simulamos el video/imagen con background-image en CSS */
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.pexels.com/photos/799091/pexels-photo-799091.jpeg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+}
+
+/* Capa suave oscura para que el texto se lea mejor */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.45)
+  );
+}
+
+/* Contenido centrado del hero */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem 3.5rem;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.hero-title {
+  font-size: 1.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+}
+
+.hero-subtitle {
+  font-size: 0.95rem;
+  max-width: 540px;
+  margin: 0;
+}
+
+/* =========================================================
+   Tarjeta de búsqueda
+   ========================================================= */
+
+.hero-search-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem 2.5rem;
+  margin-top: -3rem; /* hace que se monte sobre el hero */
+  padding-bottom: 1.5rem; /* menos espacio debajo de la card */
+}
+
+/* Card principal */
+.search-card {
+  width: 100%;
+  max-width: 960px;
+  background-color: var(--color-white);
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Contenedor de campos */
+.search-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem 1.25rem;
+}
+
+/* Cada campo */
+.search-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.search-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9a8464;
+}
+
+/* Botón “value” */
+.search-value {
+  padding: 0.25rem 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--color-brown);
+  cursor: pointer;
+}
+
+/* Flecha hacia abajo del select */
+.search-arrow {
+  width: 8px;
+  height: 8px;
+  border-left: 1px solid var(--color-brown);
+  border-bottom: 1px solid var(--color-brown);
+  transform: rotate(-45deg) translateY(-1px);
+}
+
+/* Línea inferior */
+.search-underline {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #d0c4b5;
+}
+
+/* Botón principal a la derecha (en mobile va abajo, full width) */
+.search-button-wrapper {
+  border-top: 1px solid #f3ede4;
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+.btn-hero {
+  width: 100%;
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-white);
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   Explore more + accesibilidad
+   ========================================================= */
+
+.explore-more-section {
+  background-color: #e7dfd3;
+  padding: 0.8rem 1rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.explore-more-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #7a6a56;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.explore-arrow {
+  width: 10px;
+  height: 10px;
+  border-left: 1px solid #7a6a56;
+  border-bottom: 1px solid #7a6a56;
+  transform: rotate(-45deg);
+}
+
+.discover-section-placeholder {
+  height: 400px; /* temporal, solo para ver el scroll suave */
+  background-color: #e7dfd3;
+}
+
+/* Botón de accesibilidad */
+.accessibility-button {
+  position: fixed;
+  left: 1.25rem;
+  bottom: 1.5rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid #cbb79b;
+  background-color: var(--color-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--color-brown);
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================================
    Desktop / Larger Screens
    ========================================================= */
 
@@ -287,5 +500,57 @@ body.nav-open .main-nav {
   .btn {
     font-size: 0.78rem;
     padding: 0.5rem 1.6rem;
+  }
+
+  .hero {
+    min-height: 75vh;
+  }
+
+  .hero-content {
+    padding: 4rem 1.5rem 9rem;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-search-wrapper {
+    margin-top: -5.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .search-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .search-fields {
+    flex: 1;
+    flex-direction: row;
+    padding: 1.4rem 2rem;
+    gap: 2rem;
+  }
+
+  .search-field {
+    flex: 1;
+  }
+
+  .search-button-wrapper {
+    border-top: none;
+    border-left: 1px solid #f3ede4;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .btn-hero {
+    height: 100%;
+    border-radius: 0;
+    padding: 0 2.5rem;
+    white-space: nowrap;
   }
 }

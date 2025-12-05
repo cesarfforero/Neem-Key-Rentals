@@ -25,3 +25,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// =========================================================
+// Smooth scroll for "Explore more"
+// =========================================================
+document.addEventListener("DOMContentLoaded", function () {
+  const exploreBtn = document.querySelector(".explore-more-button");
+  const targetSection = document.querySelector("#discover-section");
+
+  if (exploreBtn && targetSection) {
+    exploreBtn.addEventListener("click", () => {
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    });
+  }
+});

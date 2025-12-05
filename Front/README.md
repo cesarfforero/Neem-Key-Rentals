@@ -49,6 +49,62 @@ Un pequeño script controla:
 
 ---
 
+# Neem Key – Luxury Hero Section & Explore More (Día 2)
+
+Este documento resume el trabajo realizado hoy en el desarrollo del front-end de **Neem Key**, continuando la construcción de una interfaz premium inspirada en marcas de lujo como Explora Journeys, Four Seasons, Aman y Rosewood.
+
+El enfoque del día fue completar la **sección principal (hero)**, refinando tanto desktop como mobile, y mejorar la experiencia de navegación con una opción suave de _Explore more_.
+
+---
+
+## ✨ Objetivos del Día
+
+### ✔ Completar el Hero principal
+
+Se implementó una hero section de alto nivel:
+
+- Imagen/video de fondo con **gradient overlay** para mejorar la legibilidad.
+- Título premium en mayúsculas: _“UNA INVITACIÓN EXCLUSIVA”_.
+- Subtítulo debajo con tipografía elegante.
+- Posicionamiento centrado tanto en mobile como desktop.
+- Comportamiento responsivo totalmente fluido.
+
+---
+
+## 🧭 Tarjeta de Búsqueda (Search Card)
+
+Se creó un bloque premium similar al de Explora:
+
+- Dos campos: **“¿A dónde?”** y **“¿Cuándo?”**.
+- Íconos decorativos (ubicación y calendario).
+- Líneas inferiores finas estilo boutique hotel.
+- Dropdown arrows minimalistas.
+- Botón dorado **“MIRA LAS 3 CASAS DISPONIBLES”** con look luxury.
+
+### Adaptaciones responsivas:
+
+- **Mobile:** campos apilados + CTA completa.
+- **Desktop:** campos alineados horizontalmente con CTA a la derecha.
+- Sombras suaves, bordes redondeados y spacing profesional.
+
+---
+
+## 🧩 Explore More + Scroll Suave
+
+Se añadió la sección **Explore more**, incluyendo:
+
+- Texto centrado elegante.
+- Flecha minimalista.
+- Bloque inferior con color suave tipo resort.
+- Botón que, al hacer clic, realiza un **scroll suave** hacia la siguiente sección.
+
+Implementado con vanilla JS:
+
+```javascript
+targetSection.scrollIntoView({ behavior: "smooth" });
+
+
+
 ## 📁 Archivos del Proyecto
 
 /
@@ -70,3 +126,4 @@ Mobile First Development
 live-server para desarrollo ágil
 
 Desarrollado como parte de la nueva plataforma visual de Neem Key Rentals
+```
