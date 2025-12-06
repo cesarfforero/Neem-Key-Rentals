@@ -434,6 +434,131 @@ body.nav-open .main-nav {
 }
 
 /* =========================================================
+   FEATURE SECTION (texto + imágenes overlapeadas)
+   ========================================================= */
+
+.feature-section {
+  padding: 4rem 1.5rem 5rem;
+  background-color: #f5f2ec; /* beige luxury */
+}
+
+.feature-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.feature-divider {
+  border: none;
+  border-top: 1px solid #d6cfc3;
+  margin-bottom: 2rem;
+}
+
+.feature-text {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* Línea superior */
+.feature-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 530px;
+  height: 2px;
+  background-color: #d8d1c5; /* dorado suave */
+  opacity: 0.9;
+}
+
+/* Línea inferior */
+.feature-text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 530px;
+  height: 2px;
+  background-color: #d8d1c5;
+  opacity: 0.9;
+}
+.feature-tag {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #7a6a56;
+}
+
+.feature-title {
+  font-size: 2rem;
+  margin: 1rem 0;
+  font-weight: 500;
+  color: #2c2c2c;
+}
+
+.feature-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4f4f4f;
+  max-width: 520px;
+}
+
+.feature-description strong {
+  color: #2c2c2c;
+}
+
+.feature-btn {
+  margin-top: 1.8rem;
+  background-color: var(--color-navy);
+  border: 1px solid var(--color-navy);
+  color: white;
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  letter-spacing: 0.12em;
+}
+
+/* Images */
+.feature-images {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 420px;
+}
+
+.feature-images .img {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagen izquierda */
+.img-left {
+  width: 55%;
+  height: 75%;
+  left: 0;
+  top: -40px;
+}
+
+/* Imagen derecha (superpuesta) */
+.img-right {
+  width: 55%;
+  height: 70%;
+  right: 0;
+  bottom: 75px;
+}
+
+.feature-photo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================================
    Desktop / Larger Screens
    ========================================================= */
 
@@ -552,5 +677,25 @@ body.nav-open .main-nav {
     border-radius: 0;
     padding: 0 2.5rem;
     white-space: nowrap;
+  }
+
+  .feature-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .feature-section {
+    padding: 2rem 1.5rem 5rem;
+  }
+
+  .feature-title {
+    font-size: 2.6rem;
+  }
+
+  .feature-divider {
+    grid-column: 1 / -1; /* ocupa todo el ancho de la grid */
+    margin-bottom: 1rem;
   }
 }

@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // =========================================================
 document.addEventListener("DOMContentLoaded", function () {
   const exploreBtn = document.querySelector(".explore-more-button");
-  const targetSection = document.querySelector("#discover-section");
+  const targetSection = document.querySelector(".feature-section");
 
   if (exploreBtn && targetSection) {
     exploreBtn.addEventListener("click", () => {
