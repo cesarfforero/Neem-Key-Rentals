@@ -39,3 +39,58 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// =========================================================
+// Rotating Phrases Animation (cada 2s)
+// =========================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const list = document.getElementById("phrasesList");
+  const textEl = document.getElementById("phrasesText");
+
+  if (!list || !textEl) return;
+
+  const phrases = Array.from(list.querySelectorAll("li"))
+    .map((li) => li.textContent.trim())
+    .filter(Boolean);
+
+  if (!phrases.length) return;
+
+  let index = 0;
+  const intervalMs = 3500;
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  function setText(next) {
+    textEl.textContent = next;
+  }
+
+  function nextPhrase() {
+    index = (index + 1) % phrases.length;
+
+    // Si el usuario prefiere menos animación, solo cambia texto
+    if (reduceMotion) {
+      setText(phrases[index]);
+      return;
+    }
+
+    // animación suave: sale -> cambia texto -> entra
+    textEl.classList.add("is-leaving");
+
+    setTimeout(() => {
+      textEl.classList.remove("is-leaving");
+      textEl.classList.add("is-entering");
+      setText(phrases[index]);
+
+      requestAnimationFrame(() => {
+        textEl.classList.remove("is-entering");
+      });
+    }, 220);
+  }
+
+  // inicial
+  setText(phrases[0]);
+
+  // ciclo
+  setInterval(nextPhrase, intervalMs);
+});

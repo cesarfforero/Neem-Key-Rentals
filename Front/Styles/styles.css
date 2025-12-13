@@ -522,10 +522,7 @@ body.nav-open .main-nav {
 
 /* Images */
 .feature-images {
-  position: relative;
-  width: 100%;
-  height: auto;
-  min-height: 420px;
+  display: none; /* solo en desktop */
 }
 
 .feature-images .img {
@@ -556,6 +553,59 @@ body.nav-open .main-nav {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* =========================================================
+   PHRASES ROTATOR SECTION
+   ========================================================= */
+
+.phrases-section {
+  background-color: #f5f2ec;
+  padding: 4.5rem 1.5rem;
+}
+
+.phrases-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  gap: 1.8rem;
+  text-align: center;
+}
+
+.phrases-line {
+  display: block;
+  width: 120px; /* mobile */
+  height: 2px;
+  background-color: #d8d1c5;
+  opacity: 0.95;
+}
+
+.phrases-rotator {
+  margin: 0;
+  font-size: 1.4rem; /* mobile */
+  line-height: 1.25;
+  color: #2c2c2c;
+  letter-spacing: 0.01em;
+}
+
+.phrases-text {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  opacity: 1;
+  transform: translatex(0);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+/* estados para animación */
+.phrases-text.is-leaving {
+  opacity: 0;
+  transform: translatex(-20px);
+}
+
+.phrases-text.is-entering {
+  opacity: 0;
+  transform: translatex(20px);
 }
 
 /* =========================================================
@@ -694,8 +744,54 @@ body.nav-open .main-nav {
     font-size: 2.6rem;
   }
 
+  .feature-images {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: 420px;
+  }
+
+  .feature-images .img {
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    will-change: transform;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+  }
+
+  @keyframes floatSlow {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .img-left {
+    animation: floatSlow 5s ease-in-out infinite;
+  }
+
+  .img-right {
+    animation: floatSlow 7s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+
   .feature-divider {
     grid-column: 1 / -1; /* ocupa todo el ancho de la grid */
     margin-bottom: 1rem;
+  }
+
+  .phrases-section {
+    padding: 6rem 1.5rem;
+  }
+
+  .phrases-line {
+    width: 220px;
+  }
+
+  .phrases-rotator {
+    font-size: 2.1rem;
   }
 }
