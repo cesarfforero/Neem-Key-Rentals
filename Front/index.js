@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let index = 0;
   const intervalMs = 3500;
   const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
+    "(prefers-reduced-motion: reduce)",
   ).matches;
 
   function setText(next) {
@@ -93,4 +93,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ciclo
   setInterval(nextPhrase, intervalMs);
+});
+
+// =========================================================
+// Scroll horizontal con snap para sección de villas y apartamentos
+// =========================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuItems = document.querySelectorAll(".menu-item");
+  const cards = document.querySelectorAll(".property-card");
+  const description = document.getElementById("category-description");
+
+  const bgVillas = document.getElementById("bg-villas");
+  const bgApartments = document.getElementById("bg-apartments");
+
+  const descriptions = {
+    villas: "Villas privadas con diseño, naturaleza y servicio premium.",
+    apartments: "Apartamentos exclusivos con comodidad, ubicación y estilo.",
+  };
+
+  const backgroundImages = {
+    villas: bgVillas,
+    apartments: bgApartments,
+  };
+
+  function setActiveCategory(category) {
+    // tabs
+    menuItems.forEach((btn) => {
+      const isActive = btn.dataset.category === category;
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+
+    // cards (por clase, sin inline styles)
+    cards.forEach((card) => {
+      const isMatch = card.dataset.category === category;
+      card.classList.toggle("is-active", isMatch);
+    });
+
+    // description
+    description.textContent = descriptions[category] || "";
+
+    // backgrounds
+    Object.values(backgroundImages).forEach((bg) =>
+      bg.classList.remove("active"),
+    );
+    if (backgroundImages[category])
+      backgroundImages[category].classList.add("active");
+  }
+
+  menuItems.forEach((btn) => {
+    btn.addEventListener("click", () =>
+      setActiveCategory(btn.dataset.category),
+    );
+  });
+
+  // initial
+  setActiveCategory("villas");
 });

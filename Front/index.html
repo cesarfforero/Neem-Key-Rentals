@@ -213,6 +213,91 @@
         </ul>
       </section>
 
+      <section class="featured-properties" aria-label="Propiedades destacadas">
+        <!-- Fondos dinámicos -->
+        <div class="background-container" aria-hidden="true">
+          <div class="background-image" id="bg-villas"></div>
+          <div class="background-image" id="bg-apartments"></div>
+          <div class="background-overlay"></div>
+        </div>
+
+        <h2 class="section-title">Propiedades Destacadas</h2>
+
+        <!-- Tabs -->
+        <div class="sub-menu" role="tablist" aria-label="Categorías">
+          <button class="menu-item active" type="button" data-category="villas" role="tab" aria-selected="true">
+            Villas
+          </button>
+          <button class="menu-item" type="button" data-category="apartments" role="tab" aria-selected="false">
+            Apartamentos
+          </button>
+        </div>
+
+        <p class="section-description" id="category-description">
+          Villas privadas con diseño, naturaleza y servicio premium.
+        </p>
+
+        <!-- Cards -->
+        <div class="properties-slider" id="propertiesSlider">
+          <!-- Villas -->
+          <article class="property-card is-active" data-category="villas">
+            <div class="property-image" style="background-image: url('./Styles/Imagenes/CASA\ 4.avif');"></div>
+            <div class="property-info">
+              <h3>Heliconia</h3>
+              <p>Lujo, privacidad y vistas increíbles para desconectarte en serio.</p>
+              <button class="property-btn" type="button">Ver Propiedad</button>
+            </div>
+          </article>
+
+          <article class="property-card is-active" data-category="villas">
+            <div class="property-image" style="background-image: url('./Styles/imagenes/DSC02648.jpg');"></div>
+            <div class="property-info">
+              <h3>Passiflora</h3>
+              <p>Comodidad top, espacios amplios y ambiente natural.</p>
+              <button class="property-btn" type="button">Ver Propiedad</button>
+            </div>
+          </article>
+
+          <article class="property-card is-active" data-category="villas">
+            <div class="property-image" style="background-image: url('./Styles/imagenes/23042024-DSC00414.jpg');"></div>
+            <div class="property-info">
+              <h3>Victoria</h3>
+              <p>Ideal para planes en familia o grupos, con full amenities.</p>
+              <button class="property-btn" type="button">Ver Propiedad</button>
+            </div>
+          </article>
+
+          <article class="property-card is-active" data-category="villas">
+            <div class="property-image" style="background-image: url('./Styles/imagenes/villa_background.png');"></div>
+            <div class="property-info">
+              <h3>Orquídea</h3>
+              <p>Relax premium, piscina y una vibra elegante.</p>
+              <button class="property-btn" type="button">Ver Propiedad</button>
+            </div>
+          </article>
+
+          <!-- Apartamentos -->
+          <article class="property-card" data-category="apartments">
+            <div class="property-image" style="background-image: url('./Styles/imagenes/apartments_background.png');"></div>
+            <div class="property-info">
+              <h3>Sky Loft</h3>
+              <p>Ubicación estratégica, comodidad total y estilo moderno.</p>
+              <button class="property-btn" type="button">Ver Propiedad</button>
+            </div>
+          </article>
+
+          <article class="property-card" data-category="apartments">
+            <div class="property-image" style="background-image: url('./Styles/imagenes/residence_background.png');"></div>
+            <div class="property-info">
+              <h3>City Suite</h3>
+              <p>Perfecto para estadías cortas: práctico, elegante y seguro.</p>
+              <button class="property-btn" type="button">Ver Propiedad</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
       <!-- Botón de accesibilidad (esquina inferior izquierda) -->
       <button
         class="accessibility-button"
