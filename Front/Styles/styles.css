@@ -789,6 +789,127 @@ body.nav-open .main-nav {
   filter: brightness(1.08);
 }
 
+.nk-experience {
+  background-color: var(--color-bg);
+  padding: 4rem 1.5rem 4.5rem;
+}
+
+.nk-experience-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nk-experience-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem;
+  color: #2c2c2c;
+  letter-spacing: 0.02em;
+}
+
+.nk-experience-subtitle {
+  margin: 0 0 2.25rem;
+  color: #5a5248;
+  max-width: 720px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.nk-experience-grid {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  padding: 0.25rem 0 0.75rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(120, 95, 70, 0.35) transparent;
+}
+
+/* Webkit (Chrome, Edge, Safari) */
+.nk-experience-grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.nk-experience-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.nk-experience-grid::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    90deg,
+    rgba(120, 95, 70, 0.15),
+    rgba(120, 95, 70, 0.45),
+    rgba(120, 95, 70, 0.15)
+  );
+  border-radius: 999px;
+}
+
+/* Card */
+.nk-experience-card {
+  flex: 0 0 85%;
+  scroll-snap-align: start;
+}
+
+.nk-experience-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  transform: translateZ(0);
+}
+
+.nk-experience-body {
+  padding: 1.25rem 0.25rem 0;
+}
+
+.nk-experience-card-title {
+  margin: 0.6rem 0 0.4rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #2c2c2c;
+}
+
+.nk-experience-card-text {
+  margin: 0 0 0.85rem;
+  color: #5a5248;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+/* CTA tipo “Explore …” */
+.nk-experience-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  color: var(--color-brown);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding-bottom: 0.25rem;
+}
+
+.nk-experience-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 72%;
+  height: 1px;
+  background-color: rgba(106, 75, 47, 0.55);
+}
+
+.nk-experience-link:hover::after {
+  width: 100%;
+}
+
+.nk-experience-link span {
+  transform: translateY(1px);
+}
+
 /* =========================================================
    Desktop / Larger Screens
    ========================================================= */
@@ -989,5 +1110,29 @@ body.nav-open .main-nav {
 
   .property-card {
     width: 280px;
+  }
+
+  .nk-experience {
+    padding: 5rem 2.5rem 6rem;
+  }
+
+  .nk-experience-title {
+    font-size: 2.3rem;
+  }
+
+  .nk-experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: visible;
+    padding: 0;
+    gap: 2.5rem;
+  }
+
+  .nk-experience-media {
+    aspect-ratio: 3 / 4; /* estilo editorial (más vertical) */
+  }
+
+  .nk-experience-card-title {
+    font-size: 1.75rem;
   }
 }
