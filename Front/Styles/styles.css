@@ -1047,6 +1047,175 @@ body.nav-open .main-nav {
   opacity: 0.9;
 }
 
+/* =========================
+   TRUST / BADGES SECTION
+========================= */
+.trust-section {
+  background: #f6f1e8; /* mismo mood beige */
+  padding: 80px 0;
+}
+
+.trust-container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.trust-kicker {
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6e6257;
+  margin-bottom: 18px;
+}
+
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 18px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(30, 30, 30, 0.12);
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.trust-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
+  border-color: rgba(30, 30, 30, 0.18);
+}
+
+.trust-logo,
+.trust-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(17, 17, 17, 0.1);
+  border: 1px solid rgba(17, 17, 17, 0.14);
+}
+
+.trust-icon {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(17, 17, 17, 0.85);
+}
+
+.trust-logo-svg {
+  width: 18px;
+  height: 18px;
+  fill: rgba(17, 17, 17, 0.85);
+}
+
+.trust-text {
+  text-align: left;
+  line-height: 1.1;
+}
+
+.trust-text strong {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+.trust-text small {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+.trust-note {
+  margin-top: 18px;
+  font-size: 13px;
+  color: rgba(17, 17, 17, 0.55);
+}
+
+/* =========================
+   MOBILE: horizontal scroll chips
+========================= */
+@media (max-width: 640px) {
+  .trust-section {
+    padding: 56px 0;
+  }
+
+  .trust-container {
+    text-align: left;
+  }
+
+  .trust-badges {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 6px 2px 14px;
+    gap: 12px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .trust-badge {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    white-space: nowrap;
+  }
+
+  /* Scrollbar suave (similar a lo que hicimos antes) */
+  .trust-badges::-webkit-scrollbar {
+    height: 8px;
+  }
+  .trust-badges::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .trust-badges::-webkit-scrollbar-thumb {
+    background: rgba(17, 17, 17, 0.18);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  /* AIRBNB */
+  .trust-airbnb .trust-logo {
+    background: rgba(255, 90, 95, 0.12);
+    border-color: rgba(255, 90, 95, 0.35);
+  }
+
+  .trust-airbnb .trust-logo-svg {
+    fill: #ff5a5f;
+  }
+
+  /* BOOKING */
+  .trust-booking .trust-logo {
+    background: rgba(0, 53, 128, 0.12);
+    border-color: rgba(0, 53, 128, 0.35);
+  }
+
+  .trust-booking .trust-logo-svg {
+    fill: #003580;
+  }
+}
+
 /* =========================================================
    Desktop / Larger Screens
    ========================================================= */
@@ -1306,5 +1475,25 @@ body.nav-open .main-nav {
 
   .offer-text {
     font-size: 1.05rem;
+  }
+
+  /* AIRBNB */
+  .trust-airbnb .trust-logo {
+    background: rgba(255, 90, 95, 0.12);
+    border-color: rgba(255, 90, 95, 0.35);
+  }
+
+  .trust-airbnb .trust-logo-svg {
+    fill: #ff5a5f;
+  }
+
+  /* BOOKING */
+  .trust-booking .trust-logo {
+    background: rgba(0, 53, 128, 0.12);
+    border-color: rgba(0, 53, 128, 0.35);
+  }
+
+  .trust-booking .trust-logo-svg {
+    fill: #003580;
   }
 }
